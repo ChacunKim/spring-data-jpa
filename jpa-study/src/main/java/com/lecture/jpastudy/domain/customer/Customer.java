@@ -1,4 +1,4 @@
-package com.lecture.jpastudy.domain;
+package com.lecture.jpastudy.domain.customer;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

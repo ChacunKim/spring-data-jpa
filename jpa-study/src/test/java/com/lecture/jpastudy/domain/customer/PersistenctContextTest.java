@@ -1,5 +1,7 @@
-package com.lecture.jpastudy.domain;
+package com.lecture.jpastudy.domain.customer;
 
+import com.lecture.jpastudy.domain.customer.Customer;
+import com.lecture.jpastudy.domain.customer.CustomerRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -7,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @Slf4j
