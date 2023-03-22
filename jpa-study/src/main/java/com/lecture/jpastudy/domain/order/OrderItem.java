@@ -11,7 +11,7 @@ import java.util.Objects;
 @Setter
 @Entity
 @Table(name = "order_items")
-public class OrderItem {
+public class OrderItem extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
