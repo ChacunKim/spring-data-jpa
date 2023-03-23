@@ -35,15 +35,15 @@ public class Order extends BaseEntity{
 
     /*
     FetchType
-        - LAZY: 필요할 때 가져옴
-        - EAGER: 조회할 때 같이 가져옴
+        - LAZY: 필요할 때 가져옴 >> 프록시 객체. getMember를 했을 때 비로소 select 쿼리를 통해 members 테이블에서 객체를 가져온다.
+        - EAGER: 조회할 때 같이 가져옴 >> entity 객체: order를 가져올 때 member도 entity 객체로 가져옴(프록시가 아니라)
         */
 
-    @ManyToOne(fetch = FetchType.LAZY) //다대일(N:1) 관계 -> 주문(N) : 회원(1)
+    @ManyToOne(fetch = FetchType.EAGER) //다대일(N:1) 관계 -> 주문(N) : 회원(1)
     @JoinColumn(name = "member_id", referencedColumnName = "id")
     private Member member;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true) // flush 순간 RDS(DB)에서도 remove 하겠다.
     private List<OrderItem> orderItems;
 
     //연관관계 편의 method
