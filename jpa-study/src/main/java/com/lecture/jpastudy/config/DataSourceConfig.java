@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 
-@Configuration
+//@Configuration >> YAML을 이용한 auto config
 public class DataSourceConfig {
     //JPA 사용을 위한 4개의 bean
     //Auto Configuration 을 하면 DataSource, JpaVendorAdapter,
